@@ -1,5 +1,6 @@
 // граничні значення для бензинових авто, г/км
 const EURO = {
+  "Євро-3": { co: 2.3, nox: 0.15 },
   "Євро-4": { co: 1.0, nox: 0.08 },
   "Євро-5": { co: 1.0, nox: 0.06 },
   "Євро-6": { co: 1.0, nox: 0.06 }
@@ -8,7 +9,8 @@ const EURO = {
 function euroClass(year) {
   if (year >= 2015) return "Євро-6";
   if (year >= 2011) return "Євро-5";
-  return "Євро-4";
+  if (year >= 2006) return "Євро-4";
+  return "Євро-3";
 }
 
 document.getElementById("check").addEventListener("submit", e => {
